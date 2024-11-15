@@ -1,0 +1,26 @@
+import React from "react"
+
+const Introduction: React.FC = () => {
+  return (
+    <div className="px-16 flex flex-col text-center items-center mt-16 sm:px-28 md:px-32 lg:px-44">
+      <div className="pb-0">
+        <img src="/coloredLaptopMod.jpg" className="w-full object-cover" />
+        
+      </div>
+      <div className="sm:mt-[-100px] md:mt-[-120px] lg:mt-[-180px]">
+        <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-black sm:text-white md:text-white lg:text-white tracking-widest text-shadow">
+        <span className="flex sm:inline md:inline lg:flex">CHARLOTTE</span>
+        <span className="flex sm:inline md:inline lg:flex"> WESTERBERG</span>
+        </h2>
+        
+      </div>
+      <img
+          src="/profile.png"
+          className="w-40 h-40 bg-gray-200 p-4 rounded-full mt-1"
+        />
+      <h3 className="mt-8">FULLSTACKUTVECKLARE MED BAKRUND INOM MEDICIN</h3>
+    </div>
+  )
+}
+
+export default Introduction
