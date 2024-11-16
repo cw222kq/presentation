@@ -2,7 +2,7 @@ const AboutMe: React.FC = () => {
   return (
     <div className="px-16 text-left flex flex-col sm:px-28 md:px-32 lg:px-44">
         <h2 className="mt-12 text-4xl font-bold">
-          Hej! Jag heter Charlotte. Jag är en fullstack utvecklare som bor på
+          Hej! Jag heter Charlotte. Jag är en fullstackutvecklare som bor på
           Lidingö.
         </h2>
       
