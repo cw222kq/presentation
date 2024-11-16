@@ -5,16 +5,16 @@ const Footer: React.FC = () => {
       <p>
         <span className="inline-flex items-center">
           <img
-            src="/react.svg"
-            alt="React"
+            src="/presentation/react.svg"
+            alt="React logo"
             className="h-4 w-4 mx-4"
           />
         </span>
         <span className="inline-flex items-center">
-          <img src="/vite.svg" alt="Vite" className="h-4 w-4 mx-4" />
+          <img src="/presentation/vite.svg" alt="Vite logo" className="h-4 w-4 mx-4" />
         </span>
         <span className="inline-flex items-center">
-          <img src="/tailwind.svg" alt="Vite" className="h-4 w-4 mx-4" />
+          <img src="/presentation/tailwind.svg" alt="Tailwind logo" className="h-4 w-4 mx-4" />
         </span>
       </p>
     </div>

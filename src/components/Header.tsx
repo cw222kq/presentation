@@ -51,7 +51,7 @@ const Header: React.FC = () => {
       </div>
 
       <div className="w-14 h-14 bg-black justify-center items-center sm:w-24 sm:h-24 hidden md:flex">
-        <img src="/react.svg" className="w-16 h-16 animate-pulse" />
+        <img src="/presentation/react.svg" alt="React logo" className="w-16 h-16 animate-pulse" />
       </div>
 
       {isMenuOpen && (

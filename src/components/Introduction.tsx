@@ -4,7 +4,7 @@ const Introduction: React.FC = () => {
   return (
     <div className="px-16 flex flex-col text-center items-center mt-16 sm:px-28 md:px-32 lg:px-44">
       <div className="pb-0">
-        <img src="/coloredLaptopMod.jpg" className="w-full object-cover" />
+        <img src="/presentation/coloredLaptopMod.jpg" alt="colored laptop" className="w-full object-cover" />
         
       </div>
       <div className="sm:mt-[-100px] md:mt-[-120px] lg:mt-[-180px]">
@@ -15,7 +15,7 @@ const Introduction: React.FC = () => {
         
       </div>
       <img
-          src="/profile.png"
+          src="/presentation/profile.png" alt="profile picture"
           className="w-40 h-40 bg-gray-200 p-4 rounded-full mt-1"
         />
       <h3 className="mt-8">FULLSTACKUTVECKLARE MED BAKRUND INOM MEDICIN</h3>
