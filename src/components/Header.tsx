@@ -31,12 +31,12 @@ const Header: React.FC = () => {
     w-full justify-between border-b bg-white h-14 sm:h-24"
     >
       <div
-        className="w-14 h-14 bg-black flex justify-center items-center hover:scale-110 transition-all ease-in-out sm:w-24 sm:h-24 md:hidden"
+        className="w-14 h-14 bg-black flex justify-center items-center sm:w-24 sm:h-24 md:hidden"
         onClick={() => setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen)}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-8 h-8 cursor-pointer text-white"
+          className="w-8 h-8 text-white cursor-pointer hover:scale-110 transition-all ease-in-out"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
