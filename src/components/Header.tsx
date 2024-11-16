@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<Boolean>(false)
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
   useEffect(() => {
     console.log(isMenuOpen ? "opened" : "closed")
