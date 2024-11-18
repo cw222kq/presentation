@@ -1,8 +1,24 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
+import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5"
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+  const smallDeviceMenuRef = useRef<HTMLDivElement>(null)
 
+  const closeSmallDeviceMenuHandler = (event: MouseEvent) => {
+    if (smallDeviceMenuRef.current && !smallDeviceMenuRef.current.contains(event.target as Node)) {
+      setIsMenuOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    
+    document.addEventListener("mousedown", closeSmallDeviceMenuHandler)
+    return () => {
+      document.removeEventListener("mousedown", closeSmallDeviceMenuHandler)
+    }
+  }, [])
+  
   useEffect(() => {
     console.log(isMenuOpen ? "opened" : "closed")
   }, [isMenuOpen])
@@ -55,45 +71,29 @@ const Header: React.FC = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="absolute top-12 left-0 w-48 bg-white shadow-lg rounded-md p-4 z-50">
-          <button
-            onClick={() => setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen)}
-            className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-
+        <div ref={smallDeviceMenuRef} className="absolute top-12 left-0 w-48 bg-white shadow-lg rounded-md p-4 md:hidden">
           <ul>
             {menu.map((item) => (
               <li
                 key={item.id}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                className="px-4 py-2 hover:bg-gray-100 cursor-pointer hover:scale-110 transition-all ease-in-out"
               >
                 {item.name}
               </li>
             ))}
+            <div className="border-t mt-2 pt-4 flex justify-center items-center gap-x-8">
+            <li><IoLogoGithub className="cursor-pointer hover:scale-110 transition-all ease-in-out" /></li>
+            <li><IoLogoLinkedin className="cursor-pointer hover:scale-110 transition-all ease-in-out" /></li>
+            </div>
           </ul>
         </div>
       )}
 
-      <div className="hidden md:flex gap-14">
+      <div className="hidden md:flex gap-x-16 lg:gap-x-24">
         {menu.map((item) => (
           <div
             key={item.id}
-            className="cursor-pointer hover:underline font-medium"
+            className="cursor-pointer font-medium hover:scale-110 transition-all ease-in-out"
           >
             <h2>{item.name}</h2>
           </div>
