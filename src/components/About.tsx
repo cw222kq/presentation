@@ -1,6 +1,6 @@
-const AboutMe: React.FC = () => {
+const About: React.FC = () => {
   return (
-    <div className="px-16 text-left flex flex-col sm:px-28 md:px-32 lg:px-44">
+    <div className="text-left flex flex-col">
         <h2 className="mt-12 text-4xl font-bold">
           Hej! Jag heter Charlotte. Jag är en fullstackutvecklare som bor på
           Lidingö.
@@ -48,4 +48,4 @@ const AboutMe: React.FC = () => {
   )
 }
 
-export default AboutMe
+export default About

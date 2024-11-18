@@ -2,7 +2,7 @@ import React from "react"
 
 const Introduction: React.FC = () => {
   return (
-    <div className="px-16 flex flex-col text-center items-center mt-16 sm:px-28 md:px-32 lg:px-44">
+    <div className="flex flex-col text-center items-center">
       <div className="pb-0">
         <img src="/presentation/coloredLaptopMod.jpg" alt="colored laptop" className="w-full object-cover" />
         
