@@ -44,10 +44,10 @@ const Header: React.FC = () => {
   return (
     <div
       className="flex items-center fixed
-    w-full justify-between border-b bg-white h-14 sm:h-24"
+    w-full justify-between border-b bg-white dark:bg-[#242424] h-14 sm:h-24"
     >
       <div
-        className="w-14 h-14 bg-black flex justify-center items-center sm:w-24 sm:h-24 md:hidden"
+        className="w-14 h-14 border-b bg-black flex justify-center items-center sm:w-24 sm:h-24 md:hidden"
         onClick={() => setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen)}
       >
         <svg
@@ -66,17 +66,17 @@ const Header: React.FC = () => {
         </svg>
       </div>
 
-      <div className="w-14 h-14 bg-black justify-center items-center sm:w-24 sm:h-24 hidden md:flex">
+      <div className="w-14 h-14 border-b bg-black justify-center items-center sm:w-24 sm:h-24 hidden md:flex">
         <img src="/presentation/react.svg" alt="React logo" className="w-16 h-16 animate-pulse" />
       </div>
 
       {isMenuOpen && (
-        <div ref={smallDeviceMenuRef} className="absolute top-12 left-0 w-48 bg-white shadow-lg rounded-md p-4 md:hidden">
+        <div ref={smallDeviceMenuRef} className="absolute top-12 left-0 w-48 bg-white dark:bg-black dark:text-white shadow-lg rounded-md p-4 md:hidden">
           <ul>
             {menu.map((item) => (
               <li
                 key={item.id}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer hover:scale-110 transition-all ease-in-out"
+                className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 cursor-pointer hover:scale-110 transition-all ease-in-out"
               >
                 {item.name}
               </li>
@@ -99,7 +99,7 @@ const Header: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="w-14 h-14 bg-red-500 flex justify-center items-center sm:w-24 sm:h-24">
+      <div className="w-14 h-14 border-b bg-red-500 flex justify-center items-center sm:w-24 sm:h-24">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

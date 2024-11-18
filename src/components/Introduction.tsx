@@ -8,7 +8,7 @@ const Introduction: React.FC = () => {
         
       </div>
       <div className="sm:mt-[-100px] md:mt-[-120px] lg:mt-[-180px]">
-        <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-black sm:text-white md:text-white lg:text-white tracking-widest text-shadow">
+        <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-black dark:text-white sm:text-white md:text-white lg:text-white tracking-widest text-shadow">
         <span className="flex sm:inline md:inline lg:flex">CHARLOTTE</span>
         <span className="flex sm:inline md:inline lg:flex"> WESTERBERG</span>
         </h2>
