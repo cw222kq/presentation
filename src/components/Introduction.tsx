@@ -16,7 +16,7 @@ const Introduction: React.FC = () => {
       </div>
       <img
           src="/presentation/profile.png" alt="profile picture"
-          className="w-40 h-40 bg-gray-200 p-4 rounded-full mt-1"
+          className="w-32 h-32 sm:w-40 sm:h-40 bg-gray-200 p-4 rounded-full mt-1"
         />
       <h3 className="mt-8">FULLSTACKUTVECKLARE MED BAKRUND INOM MEDICIN</h3>
     </div>
