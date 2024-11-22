@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5"
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -86,12 +86,17 @@ const Header: React.FC = () => {
         >
           <ul>
             {menu.map((item) => (
-              <li
+              <Link
+                to={item.path}
                 key={item.id}
-                className={`px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 ${location.pathname === item.path ? "underline text-gray-400" : "cursor-pointer hover:scale-110 transition-all ease-in-out"}`}
+                onClick={() => setIsMenuOpen(false)}
               >
-                {item.name}
-              </li>
+                <li
+                  className={`px-4 py-2 dark:hover:bg-gray-500 ${location.pathname === item.path ? "underline text-gray-400" : "cursor-pointer hover:scale-110 transition-all ease-in-out"}`}
+                >
+                  {item.name}
+                </li>
+              </Link>
             ))}
             <div className="border-t mt-2 pt-4 flex justify-center items-center gap-x-8">
               <li>
@@ -108,12 +113,13 @@ const Header: React.FC = () => {
       {/* Big device menu */}
       <div className="hidden md:flex gap-x-16 lg:gap-x-24">
         {menu.map((item) => (
-          <div
-            key={item.id}
-            className={`font-medium ${location.pathname === item.path ? "underline text-gray-400" : "cursor-pointer hover:scale-110 transition-all ease-in-out"}`}
-          >
-            <h2>{item.name}</h2>
-          </div>
+          <Link to={item.path} key={item.id}>
+            <div
+              className={`font-medium ${location.pathname === item.path ? "underline text-gray-400" : "cursor-pointer hover:scale-110 transition-all ease-in-out"}`}
+            >
+              <h2>{item.name}</h2>
+            </div>
+          </Link>
         ))}
       </div>
       <div className="w-14 h-14 border-b bg-red-500 flex justify-center items-center sm:w-24 sm:h-24">
