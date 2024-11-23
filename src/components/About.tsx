@@ -1,7 +1,7 @@
 const About: React.FC = () => {
   return (
-    <div className="text-left flex flex-col mx-auto">
-      <h2 className="mt-12 text-4xl font-bold text-center">
+    <div className="text-left flex flex-col px-4">
+      <h2 className="mt-4 text-3xl md:mt-12 md:text-4xl font-bold text-center">
         Hej! Jag heter Charlotte. Jag är en fullstackutvecklare som bor på
         Lidingö.
       </h2>

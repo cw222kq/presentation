@@ -27,7 +27,6 @@ const Hero: React.FC = () => {
       <img
         src="/presentation/coloredLaptopMod.jpg"
         alt="colored laptop"
-        className="w-full object-cover"
       />
       <div className="sm:mt-[-100px] md:mt-[-120px] lg:mt-[-180px]">
         <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-black dark:text-white sm:text-white tracking-widest text-shadow">
