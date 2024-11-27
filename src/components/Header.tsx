@@ -92,7 +92,7 @@ const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <li
-                  className={`px-4 py-2 dark:hover:bg-gray-500 ${location.pathname === item.path ? "underline text-gray-400" : "cursor-pointer hover:scale-110 transition-all ease-in-out"}`}
+                  className={`px-4 py-2 dark:hover:bg-gray-500 ${location.pathname === item.path ? "underline text-gray-400 cursor-default" : "cursor-pointer hover:scale-110 transition-all ease-in-out"}`}
                 >
                   {item.name}
                 </li>
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
         {menu.map((item) => (
           <Link to={item.path} key={item.id}>
             <div
-              className={`font-medium ${location.pathname === item.path ? "underline text-gray-400" : "cursor-pointer hover:scale-110 transition-all ease-in-out"}`}
+              className={`font-medium ${location.pathname === item.path ? "underline text-gray-400 cursor-default" : "cursor-pointer hover:scale-110 transition-all ease-in-out"}`}
             >
               <h2>{item.name}</h2>
             </div>
