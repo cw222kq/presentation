@@ -48,7 +48,7 @@ const Header: React.FC = () => {
   return (
     <div
       className="flex items-center fixed
-    w-full justify-between border-b bg-white dark:bg-[#242424] h-14 sm:h-24"
+    w-full justify-between border-b bg-white dark:bg-[#242424] h-14 sm:h-24 z-50"
     >
       <div
         className="w-14 h-14 border-b bg-black flex justify-center items-center sm:w-24 sm:h-24 md:hidden"
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div
           ref={smallDeviceMenuRef}
-          className="absolute top-12 left-0 w-48 bg-white dark:bg-black dark:text-white shadow-lg rounded-md p-4 md:hidden"
+          className="fixed top-12 left-0 w-48 bg-white dark:bg-black dark:text-white shadow-lg rounded-md p-4 md:hidden"
         >
           <ul>
             {menu.map((item) => (
