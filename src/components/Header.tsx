@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useRef } from "react"
-import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5"
+import {
+  GithubIcon,
+  LinkedinIcon,
+  MenuIcon,
+  ReactLogo,
+  LargeEmailIconRedBackground,
+  Icon,
+} from "../icons"
 import { useLocation, Link } from "react-router-dom"
+
+const icons: Icon[] = [GithubIcon, LinkedinIcon]
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -54,29 +63,10 @@ const Header: React.FC = () => {
         className="w-14 h-14 border-b bg-black flex justify-center items-center sm:w-24 sm:h-24 md:hidden"
         onClick={() => setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen)}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-8 h-8 text-white cursor-pointer hover:scale-110 transition-all ease-in-out"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
+       <MenuIcon />
       </div>
 
-      <div className="w-14 h-14 border-b bg-black justify-center items-center sm:w-24 sm:h-24 hidden md:flex">
-        <img
-          src="/presentation/react.svg"
-          alt="React logo"
-          className="w-16 h-16 animate-pulse"
-        />
-      </div>
+      <ReactLogo />
 
       {/* Small device menu */}
       {isMenuOpen && (
@@ -98,13 +88,23 @@ const Header: React.FC = () => {
                 </li>
               </Link>
             ))}
-            <div className="border-t mt-2 pt-4 flex justify-center items-center gap-x-8">
-              <li>
-                <IoLogoGithub className="cursor-pointer hover:scale-110 transition-all ease-in-out" />
-              </li>
-              <li>
-                <IoLogoLinkedin className="cursor-pointer hover:scale-110 transition-all ease-in-out" />
-              </li>
+             <div className="border-t mt-2 pt-4 flex justify-center items-center gap-x-8">
+              {icons.map((icon) => {
+                const IconComponent = icon.component;
+                return (
+                  <li key={icon.url}>
+                    <a
+                      href={icon.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={icon.label}
+                      className="cursor-pointer hover:scale-110 transition-all ease-in-out"
+                    >
+                      <IconComponent />
+                    </a>
+                  </li>
+                );
+              })}
             </div>
           </ul>
         </div>
@@ -122,22 +122,7 @@ const Header: React.FC = () => {
           </Link>
         ))}
       </div>
-      <div className="w-14 h-14 border-b bg-red-500 flex justify-center items-center sm:w-24 sm:h-24">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="w-10 h-10 text-white cursor-pointer hover:scale-110 transition-all ease-in-out"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-          />
-        </svg>
-      </div>
+      <LargeEmailIconRedBackground />
     </div>
   )
 }
