@@ -5,6 +5,7 @@ import {
   MenuIcon,
   ReactLogo,
   LargeEmailIconRedBackground,
+  ClosingCrossIcon,
   Icon,
 } from "../icons"
 import { useLocation, Link } from "react-router-dom"
@@ -63,16 +64,25 @@ const Header: React.FC = () => {
         className="w-14 h-14 border-b bg-black flex justify-center items-center sm:w-24 sm:h-24 md:hidden"
         onClick={() => setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen)}
       >
-       <MenuIcon />
+        {isMenuOpen && <ClosingCrossIcon className="w-8 h-8 text-white cursor-pointer hover:scale-110 transition-all ease-in-out" />}
+        {!isMenuOpen && <MenuIcon className="w-8 h-8 text-white cursor-pointer hover:scale-110 transition-all ease-in-out" />}
       </div>
 
       <ReactLogo />
+
+       {/* Background overlay */}
+       {isMenuOpen && (
+        <div
+          className="fixed top-14 sm:top-24 left-0 w-full h-full bg-black bg-opacity-70 z-60"
+          onClick={() => setIsMenuOpen(false)}
+        ></div>
+      )}
 
       {/* Small device menu */}
       {isMenuOpen && (
         <div
           ref={smallDeviceMenuRef}
-          className="fixed top-12 left-0 w-48 bg-white dark:bg-black dark:text-white shadow-lg rounded-md p-4 md:hidden"
+          className="fixed top-14 sm:top-24 left-0 w-48 bg-white dark:bg-black dark:text-white shadow-lg rounded-md p-4 md:hidden"
         >
           <ul>
             {menu.map((item) => (
@@ -88,9 +98,9 @@ const Header: React.FC = () => {
                 </li>
               </Link>
             ))}
-             <div className="border-t mt-2 pt-4 flex justify-center items-center gap-x-8">
+            <div className="border-t mt-2 pt-4 flex justify-center items-center gap-x-8">
               {icons.map((icon) => {
-                const IconComponent = icon.component;
+                const IconComponent = icon.component
                 return (
                   <li key={icon.url}>
                     <a
@@ -103,7 +113,7 @@ const Header: React.FC = () => {
                       <IconComponent />
                     </a>
                   </li>
-                );
+                )
               })}
             </div>
           </ul>
