@@ -95,8 +95,8 @@ const Skills: React.FC = () => {
   ]
 
   return (
-    <div className="flex flex-col items-center w-full">
-      <div className="mt-8 border-t sm:mt-24 md:mt-28 lg:mt-40 lg:grid lg:gap-x-24 lg:grid-cols-3 lg:px-16">
+    <div className="flex flex-col border-t mt-8 sm:mt-24 md:mt-28 lg:mt-40 items-center w-full">
+      <div className="lg:grid lg:gap-x-24 lg:grid-cols-3">
         {categories.map((category, id) => (
           <SkillsCategory
             key={id}

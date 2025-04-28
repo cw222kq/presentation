@@ -50,7 +50,7 @@ const SmallDeviceMenu: React.FC<SmallDeviceMenuProps> = ({
       >
         <ul>
           
-          {/* ----- Menu Items ----- */}
+          {/* Menu Items */}
           {menu.map((item) => (
             <li key={item.id} className="px-4 py-2">
               <Link to={item.path} onClick={() => setIsMenuOpen(false)}>
@@ -63,7 +63,7 @@ const SmallDeviceMenu: React.FC<SmallDeviceMenuProps> = ({
             </li>
           ))}
 
-          {/* ----- Social Icons ----- */}
+          {/* Social Icons */}
           <div className="border-t mt-2 pt-4 flex justify-center items-center gap-x-8">
             {icons.map((icon) => {
               const IconComponent = icon.component

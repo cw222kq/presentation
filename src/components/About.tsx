@@ -1,14 +1,14 @@
 const About: React.FC = () => {
   return (
-    <div className="text-left flex flex-col px-4">
+    <div className="text-left flex flex-col">
       <h2 className="mt-4 text-3xl md:mt-12 md:text-4xl font-bold text-center">
         Hej! Jag heter Charlotte. Jag är en fullstackutvecklare som bor på
         Lidingö.
       </h2>
 
-      <div className="mt-8 border-t lg:mt-16 lg:grid lg:gap-x-24 lg:grid-cols-3 lg:px-16">
+      <div className="mt-8 border-t lg:mt-16 lg:grid lg:gap-x-24 lg:grid-cols-3">
 
-        {/* Sektion 1 */}
+        {/* Background */}
         <section className="flex flex-col lg:items-center space-y-4">
           <div className="w-48 h-48 bg-gradient-to-r from-teal-500 to-indigo-600 rounded-full items-center justify-center text-white font-bold text-2xl text-shadow hidden lg:flex">
             BAKGRUND
@@ -31,7 +31,7 @@ const About: React.FC = () => {
           </div>
         </section>
 
-        {/* Sektion 2 */}
+        {/* Education */}
         <section className="flex flex-col lg:items-center space-y-4">
           <div className="w-48 h-48 bg-gradient-to-r from-yellow-400 to-blue-500 rounded-full items-center justify-center text-white font-bold text-2xl text-shadow hidden lg:flex">
             UTBILDNING
@@ -56,7 +56,7 @@ const About: React.FC = () => {
           </div>
         </section>
         
-        {/* Sektion 3 */}
+        {/* Work experience */}
         <section className="flex flex-col lg:items-center lg:text-center space-y-4">
           <div className="w-48 h-48 bg-gradient-to-r from-purple-400 to-blue-600 rounded-full items-center justify-center text-white font-bold text-2xl text-shadow hidden lg:flex">
             ARBETSLIVS ERFARENHET

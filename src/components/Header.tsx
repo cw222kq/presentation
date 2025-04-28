@@ -49,13 +49,14 @@ const Header: React.FC = () => {
         {!isMenuOpen && (
           <MenuIcon className="w-8 h-8 text-white cursor-pointer hover:scale-110 transition-all ease-in-out" />
         )}
-        {/* Background overlay */}
-        {isMenuOpen && <BackgroundOverlay setIsMenuOpen={setIsMenuOpen} />}
       </div>
       <ReactLogo />
       {/* Small device menu &  Background overlay*/}
       {isMenuOpen && (
-        <SmallDeviceMenu menu={menu} setIsMenuOpen={setIsMenuOpen} />
+        <>
+          <BackgroundOverlay setIsMenuOpen={setIsMenuOpen} />
+          <SmallDeviceMenu menu={menu} setIsMenuOpen={setIsMenuOpen} />
+        </>
       )}
       {/* Big device menu */}
       <BigDeviceMenu menu={menu} />

@@ -3,7 +3,7 @@ const Projects: React.FC = () => {
     <div className="flex flex-col items-center border-t space-y-8 mt-8 sm:mt-24 md:mt-28 lg:mt-40">
       <section className="space-y-4 lg:grid lg:grid-cols-4">
         
-        {/* Game picture (only big devices) */}
+        {/* Image (only big devices) */}
         <div className="relative hidden lg:col-span-1 lg:flex">
           <img
             src="/presentation/pongPic.png"
@@ -16,12 +16,12 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Header-text (small devices) */}
-        <h2 className="font-bold text-lg lg:hidden text-left px-4 lg:px-16">
+        <h2 className="font-bold text-lg lg:hidden text-left">
           Pong
         </h2>
 
         {/* Content text */}
-        <div className="text-left lg:text-justify lg:col-span-3 px-4 lg:px-16 flex items-center">
+        <div className="text-left lg:text-justify lg:col-span-3 lg:px-16 flex items-center">
           <p>
             Pong is the first Go project I have created after taking the course{" "}
             <a
