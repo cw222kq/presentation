@@ -8,7 +8,7 @@ const Introduction: React.FC = () => {
         alt="profile picture"
         className="w-32 h-32 sm:w-40 sm:h-40 bg-gray-200 p-4 rounded-full mt-1"
       />
-      <h3 className="mt-8">FULLSTACKUTVECKLARE MED BAKRUND INOM MEDICIN</h3>
+      <h3 className="mt-8">FULLSTACK DEVELOPER WITH A BACKGROUND IN MEDICINE</h3>
     </div>
   )
 }
