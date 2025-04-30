@@ -48,7 +48,7 @@ const projects: ProjectData[] = [
       </p>
     ),
     imageUrl: "",
-    repoUrl: "https://github.com/cw222kq/randomRecipeGenerator",
+    repoUrl: "",
   },
 ]
 

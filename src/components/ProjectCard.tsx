@@ -2,7 +2,7 @@ interface ProjectCardProps {
   title: string
   description: React.ReactNode
   imageUrl?: string
-  repoUrl: string
+  repoUrl?: string
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -11,16 +11,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   imageUrl,
   repoUrl,
 }) => {
-  return (
-    <a
-      href={repoUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`Visit the ${title} repository on GitHub`}
-      className="space-y-4 lg:grid lg:grid-cols-4 block text-inherit no-underline rounded-lg"
-    >
-      {/* Image (only big devices) */}
+  const hasRepoUrl = repoUrl ? true : false
 
+  const content = (
+    <>
+      {/* Image (only big devices) */}
       <div className="relative hidden lg:col-span-1 lg:flex">
         <img
           src={imageUrl || "/presentation/imagePlaceholder.png"}
@@ -44,7 +39,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="text-left lg:text-justify lg:col-span-3 lg:px-16 flex items-center">
         {description}
       </div>
-    </a>
+    </>
+  )
+
+  if (hasRepoUrl) {
+    return (
+      <a
+        href={repoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Visit the ${title} repository on GitHub`}
+        className="space-y-4 lg:grid lg:grid-cols-4 block text-inherit no-underline rounded-lg"
+      >
+        {content}
+      </a>
+    )
+  }
+  return (
+    <div className="space-y-4 lg:grid lg:grid-cols-4 block text-inherit no-underline rounded-lg cursor-default relative">
+      {content}
+    </div>
   )
 }
 
