@@ -3,7 +3,7 @@ import ProjectCard from "../components/ProjectCard"
 interface ProjectData {
   id: string
   title: string
-  description: React.ReactNode
+  description: string
   imageUrl: string
   repoUrl: string
 }
@@ -12,43 +12,26 @@ const projects: ProjectData[] = [
   {
     id: "pong-go",
     title: "Pong",
-    description: (
-      <p>
-        Pong is the first Go project I have created after taking the course Go:
-        The Complete Developer's Guide on Udemy. The project is written in Go
-        and uses Raylib for graphics programming.
-      </p>
-    ),
+    description: 
+        "Pong is the first Go project I have created after taking the course Go: The Complete Developer's Guide on Udemy. The project is written in Go and uses Raylib for graphics programming.", 
     imageUrl: "/presentation/pongGo.png",
     repoUrl: "https://github.com/cw222kq/pongGo",
   },
   {
     id: "pong-odin",
     title: "Pong",
-    description: (
-      <p>
-        I also created a Pong game in Odin that uses Raylib for graphics. In
-        this version, the ball changes color to clearly show which player
-        currently owns it.
-      </p>
-    ),
+    description: 
+        "I also created a Pong game in Odin that uses Raylib for graphics. In this version, the ball changes color to clearly show which player currently owns it.",
     imageUrl: "/presentation/pongOdin.png",
     repoUrl: "https://github.com/cw222kq/pongOdin",
   },
   {
     id: "RandomRecipeGenerator",
     title: "Random Recipe Generator",
-    description: (
-      <p>
-        Random Recipe Generator is a work-in-progress app. The users click a
-        button to generate a new recipe and can save their favourites. It uses
-        an ASP .NET Core 8 REST API, a Next.js web frontend with TypeScript, and
-        a React Native mobile frontend. The purpose of the project is to get
-        familiar with ASP.NET Core, Next.js and React Native.
-      </p>
-    ),
-    imageUrl: "",
-    repoUrl: "",
+    description:
+          "A work-in-progress app for generating random recipes and saving favorites. Features an ASP.NET Core 8 REST API with Spoonacular integration, Next.js TypeScript web frontend, and React Native mobile app. Built to learn ASP.NET Core, Next.js, and React Native.",
+    imageUrl: "/presentation/randomRecipeGeneratorStart.png",
+    repoUrl: "https://github.com/cw222kq/randomRecipeGenerator",
   },
 ]
 

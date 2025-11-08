@@ -1,6 +1,6 @@
 interface ProjectCardProps {
   title: string
-  description: React.ReactNode
+  description: string | string[]
   imageUrl?: string
   repoUrl?: string
 }
@@ -12,6 +12,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   repoUrl,
 }) => {
   const hasRepoUrl = repoUrl ? true : false
+
+  const descriptionParagraphs = Array.isArray(description) ? description : [description]
 
   const content = (
     <>
@@ -37,7 +39,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       {/* Content text */}
       <div className="text-left lg:text-justify lg:col-span-3 lg:px-16 flex items-center">
-        {description}
+        <div className="space-y-3 lg:space-y-4">
+          {descriptionParagraphs.map((para, index) => (
+            <p key={index} className="text-base lg:text-lg leading-relaxed opacity-90">
+              {para}
+            </p>
+          ))}
+        </div>
       </div>
     </>
   )
@@ -49,7 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Visit the ${title} repository on GitHub`}
-        className="space-y-4 lg:grid lg:grid-cols-4 block text-inherit no-underline rounded-lg"
+        className="group space-y-4 lg:grid lg:grid-cols-4 block text-inherit no-underline rounded-lg"
       >
         {content}
       </a>
